@@ -2,8 +2,8 @@ Building my CLI Gem:
 
 1. Plan the gem, imagine the interface
 2. Start with project structure
-3. Start wit the entry point - the file to run
-4. Force that to build the CLI interface5.
+3. Start with the entry point - the file to run
+4. Force that to build the CLI interface
 5. Stub out the interface
 6. Start making things real
 7. Discover objects
@@ -19,10 +19,18 @@ A Command Line Interface for Library locations -
     10801 - New Rochelle Public Library
     etc.
 
-  Do you want to know the address? Y for Yes, N for No
+  Do you want to know the address?
+  Y for Yes, N for No
+    Shows Address of the branch
 
   Would you like to call them?
+  Y for Yes, N for No
+    Shows phone number of the branch
 
   Do you want to know the hours they are open?
+  Y for Yes, N for No
+    Shows hours of the branch
 
   Would you like their website?
+  Y for Yes, N for No
+    Shows website of the branch
