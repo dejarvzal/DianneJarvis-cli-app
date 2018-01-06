@@ -1,4 +1,5 @@
 class FindLibrary::Library
+  attr_accessor :name, :address, :phone, :url
 
   def self.all
     #return all the libraries in the County
@@ -20,6 +21,7 @@ class FindLibrary::Library
     library_2.phone = "914-632-7878"
     library_2.url = "http://nrpl.org/"
 
+    [library_1, library_2]
 
   end
 

@@ -14,6 +14,8 @@ A Command Line Interface for Library locations -
 
   http://www.westchesterlibraries.org/about-wls/member-libraries/list-of-member-libraries/  
 
+http://www.westchesterlibraries.org/about-wls/member-libraries/
+
   User puts in zip code
 
   Shows the associated library:
