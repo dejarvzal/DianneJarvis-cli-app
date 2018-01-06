@@ -22,6 +22,7 @@ A Command Line Interface for Library locations -
     etc.
 
 What information is good to know about a library location?
+  name
   address
   phone number
   url-website address
