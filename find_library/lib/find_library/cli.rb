@@ -10,10 +10,12 @@ class FindLibrary::CLI
   def list_library
     #User puts in zip code
     #Shows the associated library:
-    puts <<-DOC.gsub /^\s*/, ''
-      10601 - White Plains Public Library
-      10801 - New Rochelle Public Library
-    DOC
+    puts "Find a library in Westchester County:"
+    # puts <<-DOC.gsub /^\s*/, ''
+    #   10601 - White Plains Public Library
+    #   10801 - New Rochelle Public Library
+    # DOC
+    @library = FindLibrary::Library.all
   end
 
   def menu

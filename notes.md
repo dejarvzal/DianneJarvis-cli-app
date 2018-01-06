@@ -12,12 +12,22 @@ Building my CLI Gem:
 A Command Line Interface for Library locations -
     Westchester Library System (WLS) or New York Public Library (NYPL)
 
+  http://www.westchesterlibraries.org/about-wls/member-libraries/list-of-member-libraries/  
+
   User puts in zip code
 
   Shows the associated library:
     10601 - White Plains Public Library
     10801 - New Rochelle Public Library
     etc.
+
+What information is good to know about a library location?
+  address
+  phone number
+  url-website address
+  hours of operation
+
+
 
   Do you want to know the address?
   Y for Yes, N for No
