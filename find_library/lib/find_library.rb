@@ -1,5 +1,2 @@
-require "find_library/version"
-
-module FindLibrary
-  # Your code goes here...
-end
+require_relative "find_library/version"
+require_relative './find_library/cli'
