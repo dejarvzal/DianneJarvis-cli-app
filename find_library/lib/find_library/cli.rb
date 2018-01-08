@@ -10,7 +10,7 @@ class FindLibrary::CLI
   def list_library
     #User puts in zip code
     #Shows the associated library:
-    puts "Find a library in Westchester County:"
+    # puts "Find a library in Westchester County:"
     # puts <<-DOC.gsub /^\s*/, ''
     #   10601 - White Plains Public Library
     #   10801 - New Rochelle Public Library
@@ -24,15 +24,13 @@ class FindLibrary::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      case input
-      when "10601"
-        puts "Location info for White Plains Public Library"
-      when "10801"
-        puts "Location info for New Rochelle Public Library"
-      when "list" || "LIST"
-        list_library
-      else
-        puts "Not sure which library you want, please type list or exit."
+
+       if input.to_i > 0
+         puts @library[input.to_i-1]
+       elsif input == "list"
+         list_library
+       else
+         puts "Not sure which library you want, please type list or exit."
       end
     end
   end
