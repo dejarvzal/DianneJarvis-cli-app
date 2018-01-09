@@ -10,12 +10,18 @@ class FindLibrary::CLI
   def list_library
     #User puts in zip code
     #Shows the associated library:
-    # puts "Find a library in Westchester County:"
+    puts "Find a library in Westchester County:"
     # puts <<-DOC.gsub /^\s*/, ''
     #   10601 - White Plains Public Library
     #   10801 - New Rochelle Public Library
     # DOC
     @library = FindLibrary::Library.all
+    @library.each.with_index(1) do |library, i|
+      puts "#{i}. #{library.name}"
+      puts "#{library.address}"
+      puts "#{library.phone}"
+      puts "#{library.url}"
+    end
   end
 
   def menu
@@ -26,7 +32,12 @@ class FindLibrary::CLI
       input = gets.strip.downcase
 
        if input.to_i > 0
-         puts @library[input.to_i-1]
+         the_library = @library[input.to_i-1]
+        #  puts @library[input.to_i-1]
+         puts "#{i}. #{the_library.name}"
+         puts "#{the_library.address}"
+         puts "#{the_library.phone}"
+         puts "#{the_library.url}"
        elsif input == "list"
          list_library
        else
