@@ -34,7 +34,7 @@ class FindLibrary::CLI
        if input.to_i > 0
          the_library = @library[input.to_i-1]
         #  puts @library[input.to_i-1]
-         puts "#{i}. #{the_library.name}"
+         puts "#{the_library.name}"
          puts "#{the_library.address}"
          puts "#{the_library.phone}"
          puts "#{the_library.url}"
