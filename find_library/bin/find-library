@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require './lib/find_library'
-# require "bundler/setup"
-# require "find_library"
+# require './lib/find_library'
+require "bundler/setup"
+require "find_library"
 
 FindLibrary::CLI.new.call
