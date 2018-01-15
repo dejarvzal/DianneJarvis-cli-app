@@ -1,5 +1,5 @@
 class FindLibrary::Library
-  attr_accessor :name, :address, :phone, :url
+  attr_accessor :name, :address, :phone, :url, :info
 
   @@all = []
 
@@ -8,6 +8,7 @@ class FindLibrary::Library
     @address = address
     @phone = phone
     @url = url
+    @info = info
     @@all
   end
 
@@ -16,7 +17,7 @@ class FindLibrary::Library
   def self.all
     #return all the libraries in the County
     # self.scrape_library
-    Scraper.new_page
+    FindLibrary::Scraper.get_page
   end
 #Scrape Westchester Library System and return a library's information based on input
   def scrape_library
@@ -27,6 +28,7 @@ class FindLibrary::Library
 #instantiate a library
     libraries
   end
+end
 
 #   def self.scrape_wls
 #     # doc = Nokogiri::HTML(open("https://www.nypl.org/locations/map"))
@@ -39,7 +41,6 @@ class FindLibrary::Library
 #     # hours =
 #
 #   end
-end
 
 # FindLibrary::LibraryScraper.new("")
 # library_1 = self.new

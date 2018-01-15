@@ -17,6 +17,7 @@ class FindLibrary::CLI
     # DOC
     @library = FindLibrary::Library.all
     @library.each.with_index(1) do |library, i|
+      binding.pry
       puts "#{i}. #{library.name}"
       puts "#{library.address}"
       puts "#{library.phone}"
@@ -26,7 +27,6 @@ class FindLibrary::CLI
 
   def menu
     puts "Enter the zipcode of the library you would like to find, type list to see the choices again or type exit to quit:"
-    #might try this with the Enter the town of the library... since majority towns have 1 library location.
     input = nil
     while input != "exit"
       input = gets.strip.downcase
