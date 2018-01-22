@@ -15,9 +15,11 @@ class FindLibrary::Library
 
 
   def self.all
+    @@all
     #return all the libraries in the County
     # self.scrape_library
     FindLibrary::Scraper.get_page
+    # binding.pry
     # FindLibrary::Scraper.create_library
   end
 end

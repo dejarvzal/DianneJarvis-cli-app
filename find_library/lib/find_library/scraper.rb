@@ -16,7 +16,7 @@ class FindLibrary::Scraper
   # libraries << info
     library_detail.each_with_index do |details, i|
       puts "#{i+1}""." "#{details}"
-      binding.pry
+      # binding.pry
     end
   # binding.pry
   end
@@ -24,7 +24,7 @@ class FindLibrary::Scraper
   def self.get_zip
       doc = Nokogiri::HTML(open("https://www.zillow.com/browse/homes/ny/westchester-county/"))
       # zipcode =
-      binding.pry
+      # binding.pry
   end
 
   def create_library(libraries)
@@ -35,7 +35,7 @@ class FindLibrary::Scraper
       url = doc.css("p.libraryMain a")[0]["href"]
       info = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
       Library.new(name, url, info)
-      binding.pry
+      # binding.pry
     end
   end
 end
