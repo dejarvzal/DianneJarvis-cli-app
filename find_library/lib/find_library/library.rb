@@ -18,29 +18,31 @@ class FindLibrary::Library
     #return all the libraries in the County
     # self.scrape_library
     FindLibrary::Scraper.get_page
-  end
-#Scrape Westchester Library System and return a library's information based on input
-  def scrape_library
-    libraries = []
-    libraries << self.scrape_wls
-#Go to wls.org, find library location
-#extract the location information
-#instantiate a library
-    libraries
+    # FindLibrary::Scraper.create_library
   end
 end
-
-#   def self.scrape_wls
-#     # doc = Nokogiri::HTML(open("https://www.nypl.org/locations/map"))
-#     doc = Nokogiri::HTML(open("http://www.westchesterlibraries.org/about-wls/member-libraries/list-of-member-libraries/"))
-#     # binding.pry
-#     name = doc.css("a.external").children.first.text
-#     # address =
-#     # phone =
-#     # url =
-#     # hours =
-#
+#Scrape Westchester Library System and return a library's information based on input
+#   def scrape_library
+#     libraries = []
+#     libraries << self.scrape_wls
+# #Go to wls.org, find library location
+# #extract the location information
+# #instantiate a library
+#     libraries
 #   end
+# end
+
+  # def self.scrape_wls
+  #   # doc = Nokogiri::HTML(open("https://www.nypl.org/locations/map"))
+  #   doc = Nokogiri::HTML(open("http://www.westchesterlibraries.org/about-wls/member-libraries/list-of-member-libraries/"))
+  #   # binding.pry
+  #   name = doc.css("a.external").children.first.text
+  #   # address =
+  #   # phone =
+  #   # url =
+  #   # hours =
+  #
+  # end
 
 # FindLibrary::LibraryScraper.new("")
 # library_1 = self.new
