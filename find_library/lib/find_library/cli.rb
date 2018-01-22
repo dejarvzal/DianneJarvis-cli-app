@@ -12,7 +12,7 @@ class FindLibrary::CLI
     @library = FindLibrary::Library.all
     @library.each_with_index do |library, i|
       # binding.pry
-      puts "#{i+1}""." "#{library}" + "Library"
+      puts "#{i+1}""." "#{library}"  #fix this!
     end
   end
 
@@ -24,7 +24,7 @@ class FindLibrary::CLI
 
        if input.to_i > 0
          the_library = @library[input.to_i-1]
-        puts "#{library.name}"  #to be fixed
+        puts "#{@library}"  #to be fixed
 
        elsif input == "list"
          list_library
@@ -40,8 +40,3 @@ class FindLibrary::CLI
     puts "Thanks for using Find Library. Happy Reading!"
   end
 end
-
-# puts "#{library.url}"
-# puts "#{library.info}"
-# puts "#{library.address}"
-# puts "#{library.phone}"

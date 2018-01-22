@@ -1,24 +1,17 @@
 class FindLibrary::Scraper
 
-  def self.get_page
-    libraries = []
-    # library_name = []
-    # library_info = []
+  def self.get_page  #SCRAPES WEBSITE AND PUTS INFO IN AN ARRAY
     doc = Nokogiri::HTML(open("http://www.westchesterlibraries.org/about-wls/member-libraries/list-of-member-libraries/"))
     name = doc.css("a.external").children.text.split("Library")
     library_detail = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
-    #As if the iteration needs to be done here.
-    # library_name << [name]
-    # library_info << [info]
-    # libraries << [library_name, library_url, library_info]  #it's putting the libraries in the array, but not the url and info
+  end
 
-  # libraries << url#, info]
-  # libraries << info
-    library_detail.each_with_index do |details, i|
-      puts "#{i+1}""." "#{details}"
-      # binding.pry
+  def self.details
+    self.get_page.each_with_index do |details, i|
+      FindLibrary::Library.all << "#{i+1}""." "#{details}"
+
+      binding.pry
     end
-  # binding.pry
   end
 
   def self.get_zip
@@ -39,13 +32,3 @@ class FindLibrary::Scraper
     end
   end
 end
-
-# url = doc.css("p.libraryMain a")[0]["href"]
-# Full Info for each library except url:
-#     all_info = doc.css("p.libraryMain").text
-#
-# # Full Info for each library except name and url:
-#     info = doc.css("div.entry-content").text.split("\n")
-#     info = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
-#     info = doc.css("div.entry-content").text.split
-#scraping creates an array
