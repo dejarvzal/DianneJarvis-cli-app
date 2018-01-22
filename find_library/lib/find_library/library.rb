@@ -1,13 +1,10 @@
 class FindLibrary::Library
-  attr_accessor :name, :address, :phone, :url, :info
+  attr_accessor :name, :info
 
   @@all = []
 
-  def initialize(name, address, phone, url)
+  def initialize(name, info)
     @name = name
-    @address = address
-    @phone = phone
-    @url = url
     @info = info
     @@all
   end
