@@ -5,18 +5,18 @@ class FindLibrary::Scraper
     # binding.pry
     library_name = doc.css("a.external").children.text.split("Library")
     library_detail = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
+
     name = []
     library_name.each_with_index do |library, i|
-      name << "#{i+1}" ". " +"#{library}"+"Library"
-      binding.pry
-    end
+      puts location = "#{i+1}" ". " +"#{library}"+"Library"
+      # binding.pry
+      end
+      # name << location
+    # end
   end
 
-  def self.details
-    self.get_page.each_with_index do |details, i|
-      FindLibrary::Library.all << "#{i+1}""." "#{details}"
-      binding.pry
-    end
+  def create_library
+    self.get_page
   end
 
 
@@ -37,4 +37,11 @@ end
 #     doc = Nokogiri::HTML(open("https://www.zillow.com/browse/homes/ny/westchester-county/"))
 #     # zipcode =
 #     # binding.pry
+# end
+
+# def self.details
+#   self.get_page.each_with_index do |details, i|
+#     FindLibrary::Library.all << "#{i+1}""." "#{details}"
+#     binding.pry
+#   end
 # end

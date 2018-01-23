@@ -11,8 +11,12 @@ class FindLibrary::Library
 
 
 
-  def self.all #return all the libraries in the County
+  def self.all #return all the libraries in the County by name
     @@all
+  end
+
+  def details
+    #the detailed information for each library
   end
 
 end
