@@ -13,16 +13,16 @@ class FindLibrary::Scraper
       end
   end
 
-  def create_library
+  def self.create_library
     doc = Nokogiri::HTML(open("http://www.westchesterlibraries.org/about-wls/member-libraries/list-of-member-libraries/"))
     # binding.pry
-    library_name = doc.css("a.external").children.text.split("Library")
+    # library_name = doc.css("a.external").children.text.split("Library")
     library_detail = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
 
     info = []
-    library_detail.each_with_index do |library, i|
-      puts details = "#{i+1}" ". " +"#{library}"+"Library"
-      binding.pry
+    library_detail.each_with_index do |detail, i|
+      puts details = "#{i+1}" ". " +"#{detail}"
+      # binding.pry
       end
 
   end

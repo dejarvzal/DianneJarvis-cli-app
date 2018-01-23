@@ -12,10 +12,10 @@ class FindLibrary::Library
 
 
   def self.all #return all the libraries in the County by name
-    @@all
+    @@all << FindLibrary::Scraper.get_page
   end
 
-  def details
+  def self.details
     #the detailed information for each library
   end
 
