@@ -4,15 +4,15 @@ class FindLibrary::CLI
     puts "Where's the Library?"
     list_library
     menu
-    goodbye
   end
 
   def list_library #LIST OUT ALL OF THE LIBRARIES
     puts "Find the information for a library in Westchester County:"
+    FindLibrary::Scraper.get_page
     @library = FindLibrary::Library.all
+    binding.pry
     @library.each_with_index do |library, i|
-      # binding.pry
-      puts "#{i+1}""." "#{library}"  #fix this!
+      puts "#{i+1}""." "#{library.name}"  #fix this!
     end
   end
 
