@@ -10,10 +10,7 @@ class FindLibrary::CLI
     puts "Find the information for a library in Westchester County:"
     FindLibrary::Scraper.get_page
     @library = FindLibrary::Library.all
-    # binding.pry
-    @library.each_with_index do |library, i|
-      puts "#{i+1}""." "#{library.name}"  #fix this!
-    end
+
   end
 
   def menu #PROMPT USER TO FIND INFO ON A LIBRARY

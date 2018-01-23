@@ -11,26 +11,34 @@ class FindLibrary::Scraper
       puts location = "#{i+1}" ". " +"#{library}"+"Library"
       # binding.pry
       end
-      # name << location
-    # end
   end
 
   def create_library
-    self.get_page
+    doc = Nokogiri::HTML(open("http://www.westchesterlibraries.org/about-wls/member-libraries/list-of-member-libraries/"))
+    # binding.pry
+    library_name = doc.css("a.external").children.text.split("Library")
+    library_detail = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
+
+    info = []
+    library_detail.each_with_index do |library, i|
+      puts details = "#{i+1}" ". " +"#{library}"+"Library"
+      binding.pry
+      end
+
   end
 
 
-  def create_library(libraries)
-    libraries_details = []
-    libraries_details << self.get_page
-    libraries.each.with_index do |library, i|
-      name = doc.css("a.external").children.text
-      url = doc.css("p.libraryMain a")[0]["href"]
-      info = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
-      Library.new(name, info)
-      # binding.pry
-    end
-  end
+  # def create_library(libraries)
+  #   libraries_details = []
+  #   libraries_details << self.get_page
+  #   libraries.each.with_index do |library, i|
+  #     name = doc.css("a.external").children.text
+  #     url = doc.css("p.libraryMain a")[0]["href"]
+  #     info = doc.css("div.entry-content").text.gsub("\n\t\t\t\t\t\t\n ","").split("\n\n\n ")
+  #     Library.new(name, info)
+  #     # binding.pry
+  #   end
+  # end
 end
 
 # def self.get_zip  #Feature to add once program works fine.?
