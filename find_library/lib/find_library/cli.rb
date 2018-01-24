@@ -8,20 +8,26 @@ class FindLibrary::CLI
 
   def list_library #LIST OUT ALL OF THE LIBRARIES by name
     puts "Find the information for a library in Westchester County:"
-    FindLibrary::Scraper.get_page
+    # FindLibrary::Scraper.get_page
     @library = FindLibrary::Library.all
   end
 
   def menu #PROMPT USER TO FIND INFO ON A LIBRARY
     puts "Enter the number of the library you would like to find, type list to see the choices again or type exit to quit:"
+    # @library_detail = FindLibrary::Library.details
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      #need to pull from the library_detail: name, address, phone for each library
-       if input.to_i > 0
-         the_library = @library[input.to_i-1]
-        puts "#{@library}"  #to be fixed
-
+      if input.to_i > 0 && input.to_i < 39
+      #need to pull from the library_detail: name, address, phone for library chosen
+        #  @library_detail[input.to_i-1] = FindLibrary::Library.details
+         puts @library_detail = FindLibrary::Library.details[input.to_i-1]
+         puts "Choose another, type list to see them again or exit."
+       elsif input.to_i > 0 && input.to_i < 39
+             puts @library_detail = FindLibrary::Library.details[input.to_i-1]
+        #  info #to be fixed
+        # puts "#{@library_detail}"  #to be fixed
+        # @library_detail
        elsif input == "list"
          list_library
        elsif input == "exit"
