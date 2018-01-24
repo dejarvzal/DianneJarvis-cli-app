@@ -2,7 +2,8 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/find_library`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+When you use this gem, you will be able to find details about a local library in Westchester County, NY.
+You will get a list of all of the libraries and you can select the corresponding number for the library you need to see more information on.
 
 ## Installation
 
@@ -22,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: `find-library` after installing the gem.
 
 ## Development
 
