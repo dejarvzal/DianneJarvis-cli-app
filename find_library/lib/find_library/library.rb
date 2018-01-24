@@ -17,9 +17,7 @@ class FindLibrary::Library
     @@all << FindLibrary::Scraper.get_page
   end
 
-  def self.details
-    #the detailed information for each library
-    # @@details << FindLibrary::Scraper.create_library
+  def self.details #the detailed information for each library
     FindLibrary::Scraper.create_library
   end
 
