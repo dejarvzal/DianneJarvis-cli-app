@@ -11,9 +11,9 @@ class FindLibrary::CLI
   def list_library #LIST OUT ALL OF THE LIBRARIES by name
     puts "Find the information for a library in Westchester County."
     puts "\n"
-    FindLibrary::Library.all.each_with_index.map do |library, i|
-     puts "#{i+1}" ". " +"#{library}"
-     puts "\n"
+    FindLibrary::Library.all.each_with_index.map do |library, i| library
+     puts "#{i+1}" ". " +"#{library.lines.first}"
+    #  puts "\n"
     end
     puts "Enter the number of the library you would like to find:"
   end
@@ -30,20 +30,21 @@ class FindLibrary::CLI
          puts @library_detail = FindLibrary::Library.all[input.to_i-1]
          puts "\n"
          puts "Choose another, type list to see them again or exit:"
-    elsif (input.to_i >= 1 && input.to_i < 45) && input[/^-?\d+$/] and input.size <= 2
+      elsif (input.to_i >= 1 && input.to_i < 45) && input[/^-?\d+$/] and input.size <= 2
         @library_detail
-     elsif input == "list"
+      elsif input == "list"
          list_library
-     elsif input == "exit"
+      elsif input == "exit"
          goodbye
-     else
+      else
          puts "Not sure which library you want. Please type list or exit."
-     end
+      end
     end
   end
 
   def goodbye
     puts "Thanks for using Find Library. Happy Reading!"
+    @library_detail
   end
 end
 #
