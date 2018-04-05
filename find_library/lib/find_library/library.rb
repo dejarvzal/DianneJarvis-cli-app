@@ -10,19 +10,12 @@ class FindLibrary::Library
     self
   end
 
-  def self.all
-    @@all
-  end
-
   def save
     @@all << self.name
   end
 
-  def self.details #the detailed information for each library
-    FindLibrary::Scraper.create_library
-    # FindLibrary::Scraper.get_page
-    #this is an object - each instance of a library
-
+  def self.all
+    @@all
   end
 
 end
